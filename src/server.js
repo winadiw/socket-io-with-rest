@@ -27,7 +27,6 @@ app.use(function(req, res, next){
 
 //On POST request, emit to certain room/client
 app.post('/newData', (req, res) => {
-    req.body
     res.io.to(staticRoom).emit('bar', 123321)
     return res.status(200).send()
 })
